@@ -1,6 +1,7 @@
-% Silky-CTF0x02 Writeup  
+# Silky-CTF0x02 Writeup  
 (available on VulnHub)
-% Author: Anthony Criscione (arc32x)
+
+###### Author: Anthony Criscione (arc32x)
 
 
 ## Info Gathering
